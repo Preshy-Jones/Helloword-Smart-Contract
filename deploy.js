@@ -1,10 +1,11 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 const Web3 = require("Web3");
 const { interface, bytecode } = require("./compile");
+const dotenv = require("dotenv").config();
 
 const provider = new HDWalletProvider(
-  "mad similar opinion agree parrot size return chair sign sustain million view",
-  "https://rinkeby.infura.io/v3/64c90deaa0ca4197b80a64b5140898fe"
+  process.env.METAMASK_MNEMONIC,
+  process.env.RINKEBY_INFURA_API_KEY
 );
 
 const web3 = new Web3(provider);
